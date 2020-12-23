@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,27 +16,28 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class RecyclerViewActivity extends BaseActivity {
+public class GridRecyclerView extends BaseActivity {
 
     @Nullable
-    @BindView(R.id.sampleRecyclerView)
-    RecyclerView sampleRecyclerView;
+    @BindView(R.id.gridRecyclerView)
+    RecyclerView gridRecyclerView;
 
-    private RecyclerViewAdapter recyclerViewAdapter;
+    private GridViewAdapter gridViewAdapter;
 
     @BindView(R.id.topAppBar)
     Toolbar toolBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view);
+        setContentView(R.layout.activity_grid_recycler_view);
         ButterKnife.bind(this);
         setSupportActionBar(toolBar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        sampleRecyclerView.setHasFixedSize(true);
-        sampleRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        gridRecyclerView.setHasFixedSize(true);
+        gridRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         setRecyclerView(constructData());
     }
 
@@ -50,8 +52,8 @@ public class RecyclerViewActivity extends BaseActivity {
     }
 
     private void setRecyclerView(ArrayList<KidsListVO> list){
-        recyclerViewAdapter = new RecyclerViewAdapter(this, list);
-        sampleRecyclerView.setAdapter(recyclerViewAdapter);
+        gridViewAdapter = new GridViewAdapter(this, list);
+        gridRecyclerView.setAdapter(gridViewAdapter);
     }
 
     @Override
@@ -61,6 +63,5 @@ public class RecyclerViewActivity extends BaseActivity {
             return true;
         }
         return super.onOptionsItemSelected(item);
-        }
-
+    }
 }

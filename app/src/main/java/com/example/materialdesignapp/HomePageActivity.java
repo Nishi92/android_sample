@@ -26,7 +26,7 @@ public class HomePageActivity extends BaseActivity {
     @BindView(R.id.topAppBar)
     Toolbar toolBar;
 
-    String TITLES[] = {"Form with Validation","Recycler View","Buttons", "Fragments", "Messages","Vehicle Gas FillUp", "Vehicle Mileage", "Gas FillUp Log","Log Out"};
+    String TITLES[] = {"Form with Validation","Recycler View","Grid Recycler View", "Fragments", "Messages","Vehicle Gas FillUp", "Vehicle Mileage", "Gas FillUp Log","Log Out"};
     int ICONS[] = {R.mipmap.vehicle, R.mipmap.vehiclemaintenance,R.mipmap.calendar, R.mipmap.ic_notification, R.mipmap.ic_chat,R.mipmap.petrolstation, R.mipmap.mileageicon, R.mipmap.file, R.mipmap.logout};
 
     private HomeMenuAdapter mAdapter;
@@ -70,8 +70,8 @@ public class HomePageActivity extends BaseActivity {
                     Log.d("Nishi", ""+recyclerView.getChildAdapterPosition(child));
                     if (recyclerView.getChildAdapterPosition(child) == 2) {
                         startActivity(new Intent(getApplicationContext(), RecyclerViewActivity.class));
-                    } else if (recyclerView.getChildAdapterPosition(child) == 1) {
-                        //startActivity(new Intent(RidesListActivity.this, RideSummaryActivity.class));
+                    } else if (recyclerView.getChildAdapterPosition(child) == 3) {
+                        startActivity(new Intent(getApplicationContext(), GridRecyclerView.class));
                     } /*else if (recyclerView.getChildAdapterPosition(child) == 4) {
                        Intent i = new Intent();
                         i.setClass(getApplicationContext(), NotificationListActivity.class);
