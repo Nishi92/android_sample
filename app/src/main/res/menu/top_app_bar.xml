@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/menu_main_setting"
+        android:icon="@drawable/ic_magnify"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:title="Setting" />
+
+    <item
+        android:id="@+id/menu_main_setting2"
+        android:icon="@drawable/ic_refresh"
+        android:orderInCategory="200"
+        app:showAsAction="always"
+        android:title="Setting" />
+
+    <item
+        android:id="@+id/more"
+        android:title="@string/more"
+        app:showAsAction="never" />
+
+</menu>

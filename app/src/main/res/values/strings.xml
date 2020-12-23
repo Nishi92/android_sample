@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Material DesignApp</string>
+    <string name="shr_button_next">Login</string>
+    <string name="shr_button_cancel">Forgot Password?</string>
+    <string name="shr_hint_username">User Name</string>
+    <string name="shr_hint_password">Password</string>
+    <string name="favorite">Favorite</string>
+    <string name="search">Search</string>
+    <string name="more">More</string>
+    <string name="version">1.0</string>
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+</resources>
