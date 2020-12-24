@@ -3,6 +3,8 @@ package com.example.materialdesignapp;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -11,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -60,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
                     passwordLayout.setError("Enter Password");
                     return;
                 }
-                startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
+                showAlertDialog();
             }
         });
     }
@@ -84,5 +87,19 @@ public class MainActivity extends AppCompatActivity implements TextWatcher {
         else if(s.hashCode() == password.getText().hashCode()){
             passwordLayout.setError(null);
         }
+    }
+
+    //Alert Dialog
+    private void showAlertDialog(){
+
+
+        new AlertDialog.Builder(this).setTitle(getResources().getString(R.string.app_name))
+        .setMessage("Login Successful")
+        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                startActivity(new Intent(getApplicationContext(), HomePageActivity.class));
+            }
+        }).show();
     }
 }

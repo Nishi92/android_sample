@@ -105,12 +105,10 @@ public class HomePageActivity extends BaseActivity {
                         i.putExtra("showRadioGroup", true);
                         startActivity(i);
 
-                    }
-                    else if(recyclerView.getChildAdapterPosition(child) == 9){
-                        logOut();
-                        KidskabSharedPreferenceManager.getInstance().getSharedPreferences().storeBoolean(KidskabConstants.IS_LOGGED_IN, false);
-                        checkVehicleEndMileage();
                     }*/
+                    else if(recyclerView.getChildAdapterPosition(child) == 9){
+                        logout();
+                    }
                     return true;
                 }
                 return false;
