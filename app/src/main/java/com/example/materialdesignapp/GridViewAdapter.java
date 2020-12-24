@@ -29,6 +29,10 @@ public class GridViewAdapter extends RecyclerView.Adapter<GridViewAdapter.ViewHo
         this.ridersList = ridersList;
     }
 
+    public void addData(KidsListVO obj){
+        this.ridersList.add(obj);
+    }
+
     @NonNull
     @Override
     public GridViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
